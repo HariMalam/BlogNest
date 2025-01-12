@@ -107,6 +107,29 @@ npm run dev
 
 Open your browser and navigate to `http://localhost:5000`.
 
+## Screenshots
+
+### Authentication
+![Authentication](screenshots/auth.png)
+
+### Home (user)
+![Home](screenshots/home.png)
+
+### Blog
+![Blog](screenshots/blog.png)
+
+### Add Blog (admin)
+![Add Blog](screenshots/addBlog.png)
+
+### Blog List (admin)
+![Blog List](screenshots/blogList.png)
+
+### Category List (admin)
+![Category List](screenshots/categoryList.png)
+
+### Profile
+![Profile](screenshots/profile.png)
+
 ## Contributing
 
 Contributions are welcome! To get started:

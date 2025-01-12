@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <title>
+        BlogNest - <%= blog.title %>
+    </title>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans antialiased">
+    <%- include('../../partials/navbar') %>
+
+    <section class="container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Left Column: Image, Title, and Meta Information -->
+            <div>
+                <div class="relative">
+                    <img class="object-cover w-full h-96 rounded-xl shadow-lg transform transition duration-300"
+                        src="<%= blog.photo.url %>" alt="<%= blog.title %>">
+                </div>
+
+                <div class="mt-8 text-center"></div>
+
+                <!-- Category Tag -->
+                <p class="text-sm text-blue-600 uppercase tracking-wider font-semibold mt-6">
+                    <%= blog.category?.name || "undefined" %>
+                </p>
+
+                <!-- Title -->
+                <h1 class="text-4xl mt-4 font-bold text-gray-800 dark:text-white">
+                    <%= blog.title %>
+                </h1>
+
+                <!-- Author Info -->
+                <div class="flex items-center justify-center mt-6">
+                    <img class="w-12 h-12 rounded-full shadow-lg" src="<%= blog.author.photo %>"
+                        alt="<%= blog.author.displayName %>">
+                    <div class="ml-4">
+                        <h2 class="text-lg font-medium text-gray-700 dark:text-gray-300">
+                            <%= blog.author.displayName %>
+                        </h2>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Author</p>
+                    </div>
+                </div>
+
+                <!-- Blog Description -->
+                <p class="mt-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                    <%= blog.description %>
+                </p>
+
+                <!-- YouTube Video -->
+                <% if (blog.video) { %>
+                    <div class="mt-6">
+                        <div class="relative pb-[56.25%]">
+                            <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                                src="<%= blog.video %>"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </section>
+    <%- include('../../partials/footer') %>
+</body>
+
+</html>
